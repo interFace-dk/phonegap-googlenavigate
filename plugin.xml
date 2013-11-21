@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="org.apache.cordova.plugin.googlenavigate"
-    version="0.1.1">
+    id="dk.interface.cordova.plugin.googlenavigate"
+    version="0.1.0">
     <name>GoogleNavigate</name>
     <description>Cordova GoogleNavigate Plugin</description>
     <license>MIT</license>
@@ -20,10 +20,10 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="GoogleNavigate">
-                <param name="android-package" value="org.apache.cordova.plugin.GoogleNavigate" />
+                <param name="android-package" value="dk.interface.cordova.plugin.GoogleNavigate" />
             </feature>
         </config-file>
 
-        <source-file src="src/android/GoogleNavigate.java" target-dir="src/org/apache/cordova/googlenavigate" />
+        <source-file src="src/android/GoogleNavigate.java" target-dir="src/dk/interface/cordova/plugin/googlenavigate" />
      </platform>
 </plugin>

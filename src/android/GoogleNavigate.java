@@ -25,7 +25,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-package org.apache.cordova.plugin;
+package dk.interface.cordova.plugin;
 
 import org.json.JSONArray;
 import org.json.JSONException;
