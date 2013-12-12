@@ -4,6 +4,21 @@ PhoneGap Google Navigate Plugin
 * Only works on Android
 * Inspired from https://github.com/dpa99c/phonegap-native-navigation
 
+## Using the plugin ##
+The plugin creates the object google_navigate with the method navigate(query, success, fail).
+
+    query:   Navigate to location. Can be in "address,zipcode,city" or "lat,lon" form
+    success: Called without args. if request was successful
+    fail:    Called with errMsg as argument if request was unsuccessful
+
+A full example could be:
+
+    navigator.google_navigate.navigate("Some Road 1, 1234, Some City", function() {
+        console.log('Success');
+    }, function(errMsg) {
+        console.log("Failed: " + errMsg);
+    });
+
 License
 ================
 
