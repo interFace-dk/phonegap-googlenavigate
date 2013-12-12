@@ -47,23 +47,21 @@ public class GoogleNavigate extends CordovaPlugin {
     private static final String LOG_TAG = "GoogleNavigate";
 
     @Override
-    public boolean execute(String action, JSONArray args,
-            CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         boolean result;
         Log.d(LOG_TAG, "Executing plugin");
+
         if ("navigate".equals(action)){
-            result = this.navigate(args);
+            result = this.navigate(args, callbackContext);
         } else {
             Log.d(LOG_TAG, "Invalid action");
             result = false;
         }
-        if(result == true){
-            callbackContext.success();
-        }
+
         return result;
     }
 
-    private boolean navigate(JSONArray args){
+    private boolean navigate(JSONArray args, CallbackContext callbackContext){
         boolean result;
 
         try {
@@ -73,11 +71,12 @@ public class GoogleNavigate extends CordovaPlugin {
                 Log.d(LOG_TAG, "Navigating to "+query);
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + query));
                 this.cordova.getActivity().startActivity(i);
-                result = true;
+                callbackContext.success();
             } else {
                 Log.d(LOG_TAG, "Expected non-empty string arguments for query." );
-                result = false;
+                callbackContext.error("Expected non-empty string arguments for query.");
             }
+            result = true;
         }catch( JSONException e ) {
             Log.d(LOG_TAG, "Exception occurred: ".concat(e.getMessage()));
             result = false;
