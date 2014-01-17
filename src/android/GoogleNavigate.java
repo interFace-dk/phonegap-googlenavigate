@@ -25,7 +25,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-package dk.iface.cordova.plugin;
+package dk.iface.cordova.plugin.googlenavigate;
 
 import org.json.JSONArray;
 import org.json.JSONException;
